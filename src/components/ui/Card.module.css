@@ -1,0 +1,40 @@
+.card {
+    background: var(--color-surface);
+    border-radius: 24px;
+    padding: 2.5rem 2rem;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(124, 154, 134, 0.1);
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle gradient overlay on hover */
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 0;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-primary-light);
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+.card>* {
+    position: relative;
+    z-index: 1;
+}

@@ -1,0 +1,202 @@
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 8rem 2rem 4rem;
+    /* Increased top padding */
+    background: radial-gradient(circle at 10% 20%, rgba(244, 228, 188, 0.4) 0%, rgba(250, 250, 248, 0) 40%),
+        radial-gradient(circle at 90% 80%, rgba(124, 154, 134, 0.15) 0%, rgba(250, 250, 248, 0) 40%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Mesh Gradient Background Animation */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 50% 50%, rgba(124, 154, 134, 0.05), transparent 60%);
+    animation: rotateBackground 60s linear infinite;
+    z-index: 0;
+    pointer-events: none;
+}
+
+@keyframes rotateBackground {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.content {
+    z-index: 2;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background: rgba(124, 154, 134, 0.1);
+    border: 1px solid rgba(124, 154, 134, 0.2);
+    border-radius: 100px;
+    color: var(--color-primary-dark);
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    backdrop-filter: blur(4px);
+}
+
+.title {
+    font-family: var(--font-heading);
+    font-size: 4.5rem;
+    font-weight: 700;
+    color: var(--color-text);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+}
+
+.title span {
+    color: var(--color-primary);
+    position: relative;
+    display: inline-block;
+}
+
+/* Underline effect for the highlighted text */
+.title span::after {
+    content: '';
+    position: absolute;
+    bottom: 0.1em;
+    left: 0;
+    width: 100%;
+    height: 0.2em;
+    background-color: var(--color-secondary);
+    opacity: 0.4;
+    z-index: -1;
+    transform: skewX(-15deg);
+}
+
+.description {
+    font-size: 1.25rem;
+    color: var(--color-text-muted);
+    margin-bottom: 3rem;
+    max-width: 540px;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+.buttonGroup {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.imageWrapper {
+    position: relative;
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+}
+
+.productImage {
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 30px 60px rgba(44, 62, 51, 0.25));
+    z-index: 2;
+    transition: transform 0.1s ease-out;
+}
+
+.blob {
+    position: absolute;
+    z-index: 0;
+    opacity: 0.6;
+    filter: blur(60px);
+    transition: all 1s ease-in-out;
+}
+
+.blob1 {
+    width: 500px;
+    height: 500px;
+    background: var(--color-primary-light);
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    animation: morph 15s ease-in-out infinite;
+    mix-blend-mode: multiply;
+}
+
+.blob2 {
+    width: 400px;
+    height: 400px;
+    background: var(--color-secondary);
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    top: 40%;
+    left: 40%;
+    transform: translate(0, 0);
+    animation: morph 20s ease-in-out infinite reverse;
+    mix-blend-mode: multiply;
+    opacity: 0.5;
+}
+
+@keyframes morph {
+    0% {
+        border-radius: 40% 60% 60% 40% / 60% 30% 70% 40%;
+    }
+
+    50% {
+        border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    }
+
+    100% {
+        border-radius: 40% 60% 60% 40% / 60% 30% 70% 40%;
+    }
+}
+
+@media (max-width: 968px) {
+    .container {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+        text-align: center;
+        padding-top: 2rem;
+    }
+
+    .title {
+        font-size: 3rem;
+    }
+
+    .buttonGroup {
+        justify-content: center;
+    }
+
+    .imageWrapper {
+        height: 500px;
+    }
+
+    .blob1,
+    .blob2 {
+        width: 300px;
+        height: 300px;
+    }
+}

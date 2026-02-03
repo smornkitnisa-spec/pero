@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Sarabun:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Premium Herbal Palette */
+  --color-primary: #7C9A86;
+  /* Sage Green - Calming & Natural */
+  --color-primary-dark: #5A7563;
+  /* Deep Sage for contrast */
+  --color-primary-light: #A4C2B0;
+
+  --color-secondary: #F4E4BC;
+  /* Soft Biscuit/Gold - Premium Accent */
+  --color-secondary-hover: #EAD6A0;
+
+  --color-accent-gold: #C6A87C;
+  /* Muted Gold for text/borders */
+
+  --color-bg: #F9F9F7;
+  /* Warm Off-White */
+  --color-surface: #FFFFFF;
+  --color-surface-glass: rgba(255, 255, 255, 0.7);
+  /* Frosted glass token */
+
+  --color-text: #2C3E33;
+  /* Dark Green-Grey instead of pure black */
+  --color-text-muted: #6B7C70;
+
+  /* Typography */
+  --font-heading: 'Playfair Display', serif;
+  /* Elegant Serif for Headings */
+  --font-subheading: 'Outfit', sans-serif;
+  /* Clean Sans for subheads */
+  --font-body: 'Inter', sans-serif;
+  /* Highly readable body */
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  /* 8px */
+  --spacing-sm: 1rem;
+  /* 16px */
+  --spacing-md: 1.5rem;
+  /* 24px */
+  --spacing-lg: 2rem;
+  /* 32px */
+  --spacing-xl: 3rem;
+  /* 48px */
+  --spacing-2xl: 5rem;
+  /* 80px */
+
+  /* Shadows & Effects */
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 10px 30px -5px rgba(44, 62, 51, 0.08);
+  /* Greenish tint to shadow */
+  --shadow-lg: 0 20px 40px -5px rgba(44, 62, 51, 0.12);
+
+  --backdrop-blur: blur(12px);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  /* Subtle grain texture for organic feel - simulated with a very transparent repeater */
+  background-image: radial-gradient(rgba(124, 154, 134, 0.03) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  line-height: 1.25;
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--font-subheading);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s ease;
+}
+
+/* Utility classes */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Glassmorphism Utility */
+.glass-panel {
+  background: var(--color-surface-glass);
+  backdrop-filter: var(--backdrop-blur);
+  -webkit-backdrop-filter: var(--backdrop-blur);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
