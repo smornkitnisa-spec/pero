@@ -66,7 +66,7 @@ export function HeroSection() {
                     <div className={`${styles.blob} ${styles.blob2}`} />
 
                     <motion.img
-                        src="/aroma_flow_product_hero.png"
+                        src="/aroma_flow_product_hero.jpg"
                         alt="AromaFlow Inhaler"
                         className={styles.productImage}
                         style={{ y: y2 }}

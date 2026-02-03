@@ -52,7 +52,7 @@ export const content = {
         },
         footer: {
             contact: "Contact Us",
-            investment: "Seeking 1.5M THB for 15% Equity"
+            investment: "Seeking 500K THB for 10% Equity"
         }
     },
     th: {
@@ -108,7 +108,7 @@ export const content = {
         },
         footer: {
             contact: "ติดต่อเรา",
-            investment: "เสนอขอเงินลงทุน 1.5 ล้านบาท แลกหุ้น 15%"
+            investment: "เสนอขอเงินลงทุน 500,000 บาท แลกหุ้น 10%"
         }
     }
 };
